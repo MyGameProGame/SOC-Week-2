@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+  }
+  
+  h1 {
+    color: navy;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  #message {
+    font-weight: bold;
+    margin-top: 20px;
+  }

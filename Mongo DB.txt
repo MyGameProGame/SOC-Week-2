@@ -1,0 +1,41 @@
+// Import the required dependencies
+const { MongoClient } = require('mongodb');
+
+// MongoDB connection URL
+const url = 'mongodb://localhost:27017';
+
+// Database and collection names
+const dbName = 'Socialmedia_Website';
+const collectionName = 'collection1';
+
+// Schema definition
+const schema = {
+  field1: 'users',
+  field2: 'post',
+  field3: 'like',
+  field4: 'comment',
+};
+
+// Function to create the schema
+async function createSchema() {
+  try {
+    // Connect to MongoDB
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+
+    // Create the collection and schema
+    await db.createCollection(CollectionName);
+    const collection = db.collection(collectionName);
+    await collection.insertOne(schema);
+
+    console.log(`Schema created successfully in collection '${CollectionName}'`);
+
+    // Close the connection
+    client.close();
+  } catch (err) {
+    console.error('An error occurred:', err);
+  }
+}
+
+// Call the createSchema function
+createSchema();
